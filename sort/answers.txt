@@ -1,0 +1,22 @@
+sort1 uses: bubble sort
+
+How do you know?: Tested with random50000.txt, reversed50000.txt and sorted50000.txt.
+Getting the run time of sorted50000 is significantly less than the other two that
+match the bubble sort which has Big-O(n2) but Big-Ω(n).
+
+sort2 uses: merge sort.
+
+How do you know?: Tested with random50000.txt, reversed50000.txt and sorted50000.txt.
+Run time nearly the same indicate that it does not use the method bubble sort.
+Tested with random5000.txt and compare the running time with the one of
+testing with random50000.txt. The comparison shows the algorithm follows
+O(n logn) indicate the algorithm is merge sort.
+
+
+sort3 uses: selection sort
+
+How do you know?: result of testing with random5000, random10000 and random50000 shows the algorithm
+follows Big-O(n2). running time of testing with sorted50000 is about the same as
+random50000 indicate that it follows Big-Ω(n2) hence the algorithm must be
+selection sort.
+

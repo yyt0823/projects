@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Shares</th>
+                <th class="text-end" scope="col">Price</th>
+                <th class="text-end" scope="col">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in accountInfo %}
+                {% set totalValueNow = (item["shares"] * item["current_price"]) %}
+                <tr>
+                    <td>{{item["symbol"]}}</td>
+                    <td>{{item["stock_name"]}}</td>
+                    <td>{{item["shares"]}}</td>
+                    <td class="text-end">{{(item["current_price"]) | usd}}</td>
+                    <td class="text-end">{{totalValueNow | usd}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                <td class="border-0 text-end" colspan="4">{{ cash | usd}}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                <td class="border-0 text-end" colspan="4">{{ (total + cash) | usd}}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

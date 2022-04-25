@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener("DOMContentLoaded", function()
+            {
+                let btnT = document.querySelector(".T");
+                let btnF = document.querySelectorAll(".F");
+                let tF = document.querySelector("#tF");
+                btnT.addEventListener("click", function()
+                {
+                    btnT.style.color = "green";
+                    tF.innerHTML = "Correct";
+                })
+                for (let i = 0; i < btnF.length; i++)
+                {
+                    btnF[i].addEventListener("click", function()
+                    {
+                        console.log(btnF[i]);
+                        btnF[i].style.color = "red";
+                        tF.innerHTML = "Incorrect";
+                    })
+                }
+            });
+            function check()
+            {
+                let input = document.getElementById("input1");
+                let tF2 = document.getElementById("tF2");
+                if (input.value == "an artist")
+                {
+                    tF2.innerHTML = "correct";
+                    input.style.backgroundColor = "green";
+                    tF2.style.color = "black";
+                }
+                else
+                {
+                    tF2.innerHTML = "Incorrect";
+                    tF2.style.color = "red";
+                    input.style.backgroundColor = "white";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Who is Frédéric Chopin</h3>
+                <button class="T">a musician</button>
+                <button class="F">a politician</button>
+                <button class="F">an artist</button>
+                <p id="tF"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Who is Vincent van Gogh?</h3>
+                <input type="text" id="input1">
+                <button type="submit" onclick="check()">submit</button>
+                <p id="tF2"></p>
+            </div>
+        </div>
+    </body>
+</html>

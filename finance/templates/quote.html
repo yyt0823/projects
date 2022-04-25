@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post" class="row ms-auto me-auto" style="width:60%">
+        <div class="col-8">
+          <input type="text" name="symbol" placeholder="symbol" class="form-control">
+        </div>
+        <div class="col-4">
+          <button class="btn btn-primary" type="submit">submit</button>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post" class="row ms-auto me-auto" style="width:80%">
+        <div class="col-5">
+            <select class="form-select" aria-label="Default select example" name="symbol">
+                {% for stock in stock_list %}
+                    <option value="{{stock['symbol']}}">{{stock["symbol"]}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-5">
+          <input type="number" name="shares" placeholder="shares" class="form-control" min="1" step="1">
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary" type="submit">sell</button>
+        </div>
+    </form>
+{% endblock %}

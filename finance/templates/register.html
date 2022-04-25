@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post" style="width: 30%; " class="me-auto ms-auto">
+        <ul class="list-unstyled">
+            <li class="mb-3"><input type="text" name="username" placeholder="username" autofocus class="form-control-plaintext border border-primary rounded"></li>
+            <li class="mb-3"><input type="text" name="password" placeholder="password" class="form-control-plaintext border border-primary rounded"></li>
+            <li class="mb-3"><input type="text" name="confirmation" placeholder="confirmation" class="form-control-plaintext border border-primary rounded"></li>
+            <button class="btn btn-primary" type="submit">Register</button>
+        </ul>
+    </form>
+{% endblock %}
